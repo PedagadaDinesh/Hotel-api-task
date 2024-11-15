@@ -7,22 +7,14 @@ const MiddleBar = ({ open }: { open: () => void }) => {
   return (
     <aside className="main-container flex items-center justify-between py-1.5 bg-black">
       <div className="lg:w-[26%] md:w-[30rem] w-[35rem] object-contain">
-        <Link href="/" className="flex items-center gap-5">
-          <img
-            src="/logo.webp"
-            alt="main-logo"
-            className="w-16 md:w-20 lg:w-36 cursor-pointer"
-          />
+        <Link href="/" className="flex items-center gap-5 py-3">
           <div className="text-white">
             <h1 className=" font-[sedan] text:sm md:text-base lg:text-lg 2xl:text-xl">
               HOTEL{" "}
               <span className="text-amber-700 tracking-wider font-[sedan] text:base md:text-2xl 2xl:text-3xl">
-                KP PALACE
+                Bookingo...
               </span>
             </h1>
-            <p className="sedan-regular-italic 2xl:text-lg">
-              A Royal Residence
-            </p>
           </div>
         </Link>
       </div>

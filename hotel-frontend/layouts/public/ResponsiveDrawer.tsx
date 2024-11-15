@@ -14,8 +14,6 @@ const ResponsiveNavbar = ({
   onClose: () => void;
 }) => {
   const [selectedMenu, setSelectedMenu] = useState("");
-  const [selectedDropMenu, setSelectedDropMenu] = useState("");
-  const [selectedInnerDropMenu, setSelectedInnerDropMenu] = useState("");
   const { push } = useRouter();
   const handleChangeMenus = (title: string, route?: string) => {
     if (route) return push(route);
@@ -29,23 +27,15 @@ const ResponsiveNavbar = ({
     },
     {
       title: "About",
-      // link: "/about",
     },
-    // {
-    //   title: "Rooms",
-    //   link: "/rooms",
-    // },
     {
       title: "Hotels",
-      // link: "/holiday",
     },
     {
       title: "Events",
-      // link: "/gallery",
     },
     {
       title: "Contact",
-      // link: "/contact",
     },
   ];
   return (
@@ -59,11 +49,6 @@ const ResponsiveNavbar = ({
         <div className="flex flex-col gap-4 text-sm">
           <div className="flex justify-between items-center w-full py-1.5  px-4 md:px-5 border-b border-primary/30">
             <Link href="/" className="flex items-center gap-5">
-              <img
-                src="/logo.webp"
-                alt="main-logo"
-                className="w-16 md:w-20 lg:w-36 cursor-pointer"
-              />
               <div className="text-white">
                 <h1 className=" font-[sedan] text-sm md:text-base py-3 lg:text-lg 2xl:text-xl">
                   HOTEL{" "}

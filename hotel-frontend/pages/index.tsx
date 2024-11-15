@@ -3,7 +3,6 @@ import axios from 'axios';
 import { useRouter } from 'next/router';
 import BookingForm from '@/components/BookingForm';
 import HotelList from '@/components/HotelLists';
-import throttle from 'lodash/throttle';
 import { PublicLayout } from '@/layouts';
 
 interface Hotel {
@@ -39,16 +38,6 @@ const Home = () => {
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
   const [loading, setLoading] = useState<boolean>(false);
   const [filteredHots, setFileredHots] = useState<Hotel[]>([])
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  // useEffect(() => {
-  //   const handleScroll = throttle(() => {
-  //     setIsScrolled(window.scrollY > 50); // Adjust threshold as needed
-  //   }, 100); // Adjust throttle delay as needed (e.g., 100ms)
-
-  //   window.addEventListener('scroll', handleScroll);
-  //   return () => window.removeEventListener('scroll', handleScroll);
-  // }, []);
 
  
   useEffect(() => {
@@ -155,7 +144,7 @@ setFileredHots(hotels.filter((hotel:Hotel) => hotel.acf?.hotel_address?.toLocale
         </div>
       </div>
         {/* Filter Section */}
-       <div className='lg:flex md:flex-col main-container gap-10'>
+       <div className='flex flex-col lg:flex-row main-container gap-10'>
        <div className='lg:w-[25%] md:w-full rounded-lg flex flex-col gap-5 bg-white'>
           <h1 className='text-2xl font-bold font-[sedan] text-primary'>FILTERS :</h1>
           <div>

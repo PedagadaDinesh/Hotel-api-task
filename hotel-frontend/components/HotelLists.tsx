@@ -23,7 +23,7 @@ const HotelList = ({ hotels, handleHotelClick }: any) => {
   };
 
   return (
-    <div className="w-[75%]">
+    <div className="lg:w-[75%] w-full">
       <ul className="space-y-6">
         {paginatedHotels.map((hotel: any) => (
           <li
@@ -47,7 +47,7 @@ const HotelList = ({ hotels, handleHotelClick }: any) => {
                 ? `${hotel.acf.hotel_description.slice(0, 500)}...`
                 : hotel.acf.hotel_description}
             </p>
-            <div className="flex justify-between items-center">
+            <div className="flex md:flex-row flex-col gap-5 md:gap-0 justify-between items-center">
               <div className="rounded-xl pl-4 text-[#133E87] flex flex-col gap-1 font-semibold">
                 <p className="text-gray-600 flex gap-2 text-center font-[poppins]">
                   <MdFastfood className="text-primary h-5 w-5" /> {hotel.acf.meal_paln}
