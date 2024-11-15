@@ -1,0 +1,418 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Sedan:ital@0;1&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+html,
+body {
+  font-family: "Raleway", "Poppins", "Sedan", sans-serif;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth !important;
+}
+.sedan-regular-italic {
+    font-family: "Sedan", serif;
+    font-style: italic;
+  }
+
+:root {
+  --skeleton-bg-light: rgb(241 245 249);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #00314b transparent;
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  width: 0.3em;
+  height: 0.3em;
+}
+::-webkit-scrollbar-thumb {
+  background: #00314b;
+  border-radius: 2em;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+*:disabled {
+  cursor: not-allowed;
+}
+.scroll-bar-none::-webkit-scrollbar {
+  display: none;
+}
+
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.myCustomCarousel .slick-arrow::before,
+.myCustomCarousel .slick-arrow::after {
+  font-size: 40px !important; /* Adjust the size as needed */
+}
+
+.slick-prev {
+  left: 3% !important;
+  z-index: 1;
+}
+
+.slick-next {
+  right: 3% !important;
+  z-index: 1;
+}
+
+
+
+@layer components {
+  .main-container {
+    @apply  px-3 md:px-6 xl:px-16 lg:px-12 lg:py-1 2xl:px-20;
+  }
+  .common-transition {
+    @apply !transition-all !ease-in-out !duration-300;
+  }
+  .image-transition {
+    @apply !transition-all !ease-in-out !duration-1000;
+  }
+  .delay-animation {
+    @apply !transition-all !ease-in-out !duration-500;
+  }
+  .dashboard-title {
+    @apply text-lg md:text-xl tracking-wide font-semibold text-primary font-[Poppins];
+  }
+  .lead-page-title {
+    @apply font-semibold text-2xl md:text-4xl lg:text-5xl;
+  }
+  .lead-page-secondary-title {
+    @apply text-sm md:text-base 2xl:text-lg text-secondary-text;
+  }
+  .common-card {
+    @apply rounded-xl shadow-[rgba(76,_78,_100,_0.14)_0px_2px_10px_0px] bg-white !important;
+  }
+  .global-gap {
+    @apply xl:gap-5 gap-4 2xl:gap-6;
+  }
+  .global-t-padding {
+    @apply pt-10 md:pt-14 lg:pt-20;
+  }
+  .global-b-padding {
+    @apply pb-10 md:pb-14 lg:pb-20;
+  }
+  .global-y-padding {
+    @apply py-10 md:py-14 lg:py-20;
+  }
+  .btn-primary {
+    @apply bg-gradient-to-b from-quinary to-dark text-white;
+  }
+  .poppins {
+    @apply font-[Poppins];
+  }
+  .sedan {
+    @apply font-[Sedan];
+  }
+}
+
+
+
+/* --------------------------------------------------nprogress styles----------------------------------- */
+
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background-image: linear-gradient(to right, #7e22ce, #57a4d0);
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+}
+
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0 0 10px #894782, 0 0 5px #894782;
+  opacity: 1;
+
+  -webkit-transform: rotate(3deg) translate(0px, -4px);
+  -ms-transform: rotate(3deg) translate(0px, -4px);
+  transform: rotate(3deg) translate(0px, -4px);
+}
+
+#nprogress .spinner {
+  display: block;
+  position: fixed;
+  z-index: 9999;
+  top: 15px;
+  right: 15px;
+}
+
+#nprogress .spinner-icon {
+  width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+  border: solid 2px transparent;
+  border-top-color: #57a4d0;
+  border-left-color: #7e22ce;
+  border-radius: 50%;
+  -webkit-animation: nprogress-spinner 400ms linear infinite;
+  animation: nprogress-spinner 400ms linear infinite;
+}
+
+.nprogress-custom-parent {
+  overflow: hidden;
+  position: relative;
+}
+
+.nprogress-custom-parent #nprogress .spinner,
+.nprogress-custom-parent #nprogress .bar {
+  position: absolute;
+}
+
+@-webkit-keyframes nprogress-spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes nprogress-spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ++++++++++++++++++++++++++++++++++++++++++++ nprogress styles end ++++++++++++++++++++++++++++++++++++++++ */
+
+/* --------------------------------------------lead page Navbar Styles---------------------------------------- */
+.menu {
+  display: hidden;
+}
+.menu:hover .inner-menu {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+.test-inside {
+  display: hidden;
+}
+.test:hover .test-inside {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --------------------------------------------React Slick Slider Styles---------------------------------------- */
+
+.slider-container {
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+
+.slider-item {
+  min-width: 300px;
+}
+
+.slider-item.active {
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------Media Page Styles---------------------------------------- */
+
+.media-bg-clip {
+  clip-path: polygon(
+    50% 0%,
+    100% 0,
+    100% 35%,
+    100% 80%,
+    80% 90%,
+    50% 100%,
+    20% 90%,
+    0 81%,
+    0% 35%,
+    0 0
+  );
+}
+
+.bg-overlay {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#364574),
+    to(#405189)
+  );
+  background: linear-gradient(to right, #364574, #405189);
+  opacity: 0.9;
+}
+
+/* --------------------------------------------------skeleton styles----------------------------------------------- */
+
+.skeleton {
+  background-image: linear-gradient(
+    90deg,
+    var(--skeleton-bg-light) 8px,
+    rgba(229 229 229/90%) 40px,
+    var(--skeleton-bg-light) 80px
+  );
+  background-size: 300%;
+  background-position: 100% 0;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -100% 0;
+  }
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++++++skeleton styles end ++++++++++++++++++++++++++++++++++++++++ */
+
+/* --------------------------------------------------swal styles----------------------------------------------- */
+
+.swal-confirm-button {
+  padding: 0.5rem 1.375rem;
+  color: white;
+  border-radius: 10px !important;
+  box-shadow: rgba(76, 78, 100, 0.42) 0px 4px 8px -4px;
+  text-transform: uppercase !important;
+  font-size: 0.9rem !important;
+}
+
+.swal-cancel-button {
+  padding: 0.5rem 1.375rem;
+  color: white;
+  border-radius: 10px !important;
+  background: transparent !important;
+  border: 1px solid #ff4d4980 !important;
+  color: #ff4d49 !important;
+  text-transform: uppercase !important;
+  font-size: 0.9rem !important;
+}
+.swal-container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px !important;
+  background-color: white;
+  color: var(--text-color) !important;
+  padding: 8px !important;
+}
+div:where(.swal2-container) h2:where(.swal2-title) {
+  padding: 0 !important;
+  padding-top: 1rem !important;
+  padding-bottom: 0.3rem !important;
+}
+div:where(.swal2-container) .swal2-html-container {
+  margin: 0 !important;
+}
+div:where(.swal2-container).swal2-backdrop-show,
+div:where(.swal2-container).swal2-noanimation {
+  background: rgba(0, 0, 0, 0.5) !important;
+  z-index: 99999 !important;
+}
+.swal-confirm-button:focus {
+  outline: none !important;
+  border: none !important;
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++++++swal styles end ++++++++++++++++++++++++++++++++++++++++ */
+
+/* --------------------------------------------- Animation ------------------------------------------ */
+
+.floating-x-animation {
+  animation: float-x 6s ease-in-out infinite;
+}
+
+@keyframes float-x {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.floating-xx-animation {
+  animation: float-x 7s ease-in-out infinite;
+}
+
+@keyframes float-x {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-30px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.floating-y-animation {
+  animation: float-y 7s ease-in-out infinite;
+}
+
+@keyframes float-y {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ------------------------------------------------------- 3D animations--------------------------------------------- */
+.lean-image-animate {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+
+.container {
+  perspective: 800px;
+}
+
+.container:hover > .card {
+  /* cursor: pointer; */
+  transform: rotateY(180deg);
+}
+
+.card {
+  transition: transform 1500ms;
+  transform-style: preserve-3d;
+}
+
+.front,
+.back {
+  backface-visibility: hidden;
+}
+
+.front {
+  background-image: url(https://source.unsplash.com/random/350x500);
+}
+
+.back {
+  transform: rotateY(180deg);
+}
